@@ -12,6 +12,14 @@ public class RayCast : MonoBehaviour
     [SerializeField]
     private float maxDistance;
 
+    public IInteractive LookingatInteractive
+    {
+        get { return lookingAtInteractive; }
+        private set { lookingAtInteractive = value; }
+    }
+
+    private IInteractive lookingAtInteractive;
+
     private void FixedUpdate()
     {
         Debug.DrawRay(rayCastOrigin.position, rayCastOrigin.forward * maxDistance, Color.red);
@@ -19,6 +27,8 @@ public class RayCast : MonoBehaviour
         bool objectwasDetected = Physics.Raycast(rayCastOrigin.position, rayCastOrigin.forward, out hitInfo , maxDistance);
 
         IInteractive interactive = null;
+
+        LookingatInteractive = interactive;
 
         if (objectwasDetected)
         {
@@ -28,7 +38,7 @@ public class RayCast : MonoBehaviour
 
         if (interactive != null)
         {
-            interactive.InteractWith();
+            LookingatInteractive = interactive;
         }
     }
 
