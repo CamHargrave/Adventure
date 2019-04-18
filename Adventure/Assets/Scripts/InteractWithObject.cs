@@ -7,17 +7,24 @@ public class InteractWithObject : MonoBehaviour
     /// <summary>
     /// Detects when the player presses the INteract button while looking at an IInteractive and then calls that IInteractive's InteractWith method.
     /// </summary>
-{   // Update is called once per frame
+{
 
-    [SerializeField]
-    private RayCast detectInteractive;
+    //[SerializeField]
+    //private RayCast detectInteractive;
+
+    private IInteractive lookedAtInteractive;
 
     void Update()
     {
-        if (Input.GetButtonDown("Interact") && detectInteractive.LookingatInteractive != null)
+        if (Input.GetButtonDown("Interact") && lookedAtInteractive != null)
         {
             Debug.Log("Player pressed the Interact button");
-            detectInteractive.LookingatInteractive.InteractWith();
+            lookedAtInteractive.InteractWith();
         }
+    }
+
+    private void OnLookedAtInteractiveChanged(IInteractive newLookedAtInteractive)
+    {
+        lookedAtInteractive = newLookedAtInteractive;
     }
 }

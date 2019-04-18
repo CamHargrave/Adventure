@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IInteractive
 {
     void InteractWith();
+    string DisplayText { get; }
 }

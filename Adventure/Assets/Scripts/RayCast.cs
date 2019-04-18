@@ -1,10 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// Detects interactive elements the player is looking at.
+/// </summary>
+
 public class RayCast : MonoBehaviour
 {
-    [Tooltip("Starting point f raycast used to detect interatives.")]
+    [Tooltip("Starting point of raycast used to detect interactives.")]
 
     [SerializeField]
     private Transform rayCastOrigin;
@@ -12,15 +18,32 @@ public class RayCast : MonoBehaviour
     [SerializeField]
     private float maxDistance;
 
+    /// <summary>
+    /// Event raised when the player looks at a different IInteractive.
+    /// </summary>
+    public static event Action<IInteractive> LookedAtInteractiveChanged;
+
     public IInteractive LookingatInteractive
     {
         get { return lookingAtInteractive; }
-        private set { lookingAtInteractive = value; }
+        private set {
+            bool isInteractiveChanged = value != lookingAtInteractive;
+            if (isInteractiveChanged)
+            {
+                lookingAtInteractive = value;
+                LookedAtInteractiveChanged?.Invoke(lookingAtInteractive);
+            }
+        }
     }
 
     private IInteractive lookingAtInteractive;
 
     private void FixedUpdate()
+    {
+        GetLookedAtInteractive();
+    }
+
+    private IInteractive GetLookedAtInteractive()
     {
         Debug.DrawRay(rayCastOrigin.position, rayCastOrigin.forward * maxDistance, Color.red);
         RaycastHit hitInfo;
@@ -40,6 +63,8 @@ public class RayCast : MonoBehaviour
         {
             LookingatInteractive = interactive;
         }
+
+        return interactive;
     }
 
 }
