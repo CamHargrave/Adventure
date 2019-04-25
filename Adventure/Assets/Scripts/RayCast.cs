@@ -40,8 +40,13 @@ public class RayCast : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GetLookedAtInteractive();
+       LookingatInteractive = GetLookedAtInteractive();
     }
+
+    /// <summary>
+    /// Raycasts forward from camera to look at IIneractives
+    /// </summary>
+    /// <returns> the first IInteractive detected, or null if none are found.</returns>
 
     private IInteractive GetLookedAtInteractive()
     {
@@ -57,11 +62,6 @@ public class RayCast : MonoBehaviour
         {
             //Debug.Log($"Player is looking at {hitInfo.collider.gameObject.name} ");
             interactive = hitInfo.collider.gameObject.GetComponent<IInteractive>();
-        }
-
-        if (interactive != null)
-        {
-            LookingatInteractive = interactive;
         }
 
         return interactive;

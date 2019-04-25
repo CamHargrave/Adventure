@@ -5,14 +5,20 @@ using UnityEngine;
 public class InteractiveObject : MonoBehaviour, IInteractive
 {
     [SerializeField]
-    private string displayText;
+    public string displayText = nameof(InteractiveObject);
 
     public string DisplayText => displayText;
+    private AudioSource audioSource;
 
-    public void InteractWith()
+    protected virtual void Awake()
     {
-        Debug.Log($"Player just interacted with {gameObject.name}.");
+        audioSource = GetComponent<AudioSource>();
     }
 
+    public virtual void InteractWith()
+    {
+        audioSource.Play();
+        Debug.Log($"Player just interacted with {gameObject.name}.");
+    }
     
 }
