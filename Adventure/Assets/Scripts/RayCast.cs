@@ -11,7 +11,6 @@ using UnityEngine;
 public class RayCast : MonoBehaviour
 {
     [Tooltip("Starting point of raycast used to detect interactives.")]
-
     [SerializeField]
     private Transform rayCastOrigin;
     [Tooltip("How far raycast will travel to search for interactive objects.")]
