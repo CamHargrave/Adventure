@@ -347,6 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayText: Journal
+  audioSource: {fileID: 0}
 --- !u!82 &7214882739700284784
 AudioSource:
   m_ObjectHideFlags: 0

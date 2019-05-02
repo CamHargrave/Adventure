@@ -9,17 +9,17 @@ public class InteractWithObject : MonoBehaviour
     /// </summary>
 {
 
-    //[SerializeField]
-    //private RayCast detectInteractive;
+    [SerializeField]
+    private RayCast detectInteractive;
 
     private IInteractive lookedAtInteractive;
 
     void Update()
     {
-        if (Input.GetButtonDown("Interact") && lookedAtInteractive != null)
+        if (Input.GetButtonDown("Interact") && detectInteractive.LookingAtInteractive != null)
         {
             Debug.Log("Player pressed the Interact button");
-            lookedAtInteractive.InteractWith();
+            detectInteractive.LookingAtInteractive.InteractWith();
         }
     }
 

@@ -8,7 +8,7 @@ public class InteractiveObject : MonoBehaviour, IInteractive
     public string displayText = nameof(InteractiveObject);
 
     public string DisplayText => displayText;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     protected virtual void Awake()
     {

@@ -23,7 +23,7 @@ public class Door : InteractiveObject
 
     public override void InteractWith()
     {
-        if (isOpen = false)
+        if (isOpen == false)
         {
             base.InteractWith();
             anim.SetBool("shouldOpen", true);
