@@ -17,7 +17,7 @@ public class Door : InteractiveObject
 
     protected override void Awake()
     {
-        base.Awake();
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
 
@@ -25,8 +25,8 @@ public class Door : InteractiveObject
     {
         if (isOpen == false)
         {
-            base.InteractWith();
             anim.SetBool("shouldOpen", true);
+            audioSource.Play();
             displayText = string.Empty;
             isOpen = true;
         }

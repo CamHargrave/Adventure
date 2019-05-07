@@ -8,15 +8,18 @@ public class ToggleSetActive : InteractiveObject
     [SerializeField]
     private GameObject ObjectToToggle;
 
-    private AudioSource lightSwitch;
-    
 
     /// <summary>
     /// Tollges the activeSelf value for the objectToToggle when the player interacts with this object
     /// </summary>
+    protected override void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        
+    }
     public override void InteractWith()
     {
         ObjectToToggle.SetActive(!ObjectToToggle.activeSelf);
-        lightSwitch.Play();
+        audioSource.Play();
     }
 }
