@@ -7,6 +7,8 @@ public class TitleMenu : MonoBehaviour
 {
     [SerializeField]
     private string gameSceneName;
+    [SerializeField]
+    private string creditsScene;
 
     public void LoadGameScene()
     {
@@ -16,5 +18,10 @@ public class TitleMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void LoadCredtis()
+    {
+        SceneManager.LoadScene(creditsScene);
     }
 }
