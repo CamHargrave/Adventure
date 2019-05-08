@@ -20,6 +20,10 @@ public class InventoryObject : InteractiveObject
     private new Renderer renderer;
     private new Collider collider;
 
+    public Sprite Icon => icon;
+    public string Description => description;
+    public string ObjectName => objectName;
+
     private void Start()
     {
         renderer = GetComponent<Renderer>();
@@ -40,8 +44,9 @@ public class InventoryObject : InteractiveObject
     public override void InteractWith()
     {
         audioSource.Play();
-        PlayerInventory.InventoryObjects.Add(this);
         renderer.enabled = false;
         collider.enabled = false;
+        PlayerInventory.InventoryObjects.Add(this);
+        InventoryMenu.Instance.AddItemToMenu(this);
     }
 }

@@ -445,3 +445,5 @@ MonoBehaviour:
   displayText: Pickup Journal
   audioSource: {fileID: 0}
   objectName: Journal
+  description: A journal for you to take notes in.
+  icon: {fileID: 21300000, guid: 68dda3fc141f139488dbb86f4517ba5d, type: 3}
