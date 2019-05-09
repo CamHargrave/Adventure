@@ -15194,7 +15194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 043b2c5b3933bd54daceebebae07d883, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.404
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -15917,6 +15917,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light
       objectReference: {fileID: 0}
+    - target: {fileID: 6683903630789423301, guid: 8139bf2219120144abeb2adec35a874b,
+        type: 3}
+      propertyPath: m_Name
+      value: MainLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683903630789423301, guid: 8139bf2219120144abeb2adec35a874b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6683903629412747162, guid: 8139bf2219120144abeb2adec35a874b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15992,16 +16002,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1639514635}
-    - target: {fileID: 6683903630789423301, guid: 8139bf2219120144abeb2adec35a874b,
-        type: 3}
-      propertyPath: m_Name
-      value: MainLight
-      objectReference: {fileID: 0}
-    - target: {fileID: 6683903630789423301, guid: 8139bf2219120144abeb2adec35a874b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6683903630789423302, guid: 8139bf2219120144abeb2adec35a874b,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -23884,6 +23884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light
       objectReference: {fileID: 0}
+    - target: {fileID: 6683903630789423301, guid: 8139bf2219120144abeb2adec35a874b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6683903629412747162, guid: 8139bf2219120144abeb2adec35a874b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23959,11 +23964,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 340062851}
-    - target: {fileID: 6683903630789423301, guid: 8139bf2219120144abeb2adec35a874b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6683903630789423302, guid: 8139bf2219120144abeb2adec35a874b,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -34777,6 +34777,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 562144922}
+    - target: {fileID: 5942927093187467451, guid: c4d906b658c0fbd449c5a9c937b58df0,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4faf2b9a7347c4a4e82442d0e689279a, type: 3}
     - target: {fileID: 6054376855467390811, guid: c4d906b658c0fbd449c5a9c937b58df0,
         type: 3}
       propertyPath: m_SelectedFaces.Array.size
@@ -34792,11 +34797,6 @@ PrefabInstance:
       propertyPath: m_SelectedVertices.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5942927093187467451, guid: c4d906b658c0fbd449c5a9c937b58df0,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4faf2b9a7347c4a4e82442d0e689279a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4d906b658c0fbd449c5a9c937b58df0, type: 3}
 --- !u!43 &1429528347
