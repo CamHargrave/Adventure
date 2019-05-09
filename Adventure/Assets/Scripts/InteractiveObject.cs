@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour, IInteractive
 {
+    
     [SerializeField]
-    public string displayText = nameof(InteractiveObject);
+    protected string displayText = nameof(InteractiveObject);
 
     public string DisplayText => displayText;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
 
     protected virtual void Awake()
     {

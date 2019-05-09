@@ -17,16 +17,16 @@ public class Door : InteractiveObject
 
     protected override void Awake()
     {
-        base.Awake();
+        audioSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
     }
 
     public override void InteractWith()
     {
-        if (isOpen = false)
+        if (isOpen == false)
         {
-            base.InteractWith();
             anim.SetBool("shouldOpen", true);
+            audioSource.Play();
             displayText = string.Empty;
             isOpen = true;
         }

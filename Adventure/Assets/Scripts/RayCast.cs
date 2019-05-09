@@ -11,7 +11,6 @@ using UnityEngine;
 public class RayCast : MonoBehaviour
 {
     [Tooltip("Starting point of raycast used to detect interactives.")]
-
     [SerializeField]
     private Transform rayCastOrigin;
     [Tooltip("How far raycast will travel to search for interactive objects.")]
@@ -23,7 +22,7 @@ public class RayCast : MonoBehaviour
     /// </summary>
     public static event Action<IInteractive> LookedAtInteractiveChanged;
 
-    public IInteractive LookingatInteractive
+    public IInteractive LookingAtInteractive
     {
         get { return lookingAtInteractive; }
         private set {
@@ -40,7 +39,7 @@ public class RayCast : MonoBehaviour
 
     private void FixedUpdate()
     {
-       LookingatInteractive = GetLookedAtInteractive();
+       LookingAtInteractive = GetLookedAtInteractive();
     }
 
     /// <summary>
@@ -56,7 +55,7 @@ public class RayCast : MonoBehaviour
 
         IInteractive interactive = null;
 
-        LookingatInteractive = interactive;
+        LookingAtInteractive = interactive;
 
         if (objectwasDetected)
         {
